@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Ferreteria S y L</title>
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Seccion de navegacion -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html"><img src="Imagenes/Logo.png" height="45px" width="45px" style="border-radius: 9px; margin-right: 20px;"><strong> Ferreteria S y L</strong></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="sobrenosotros.html">Sobre nosotros</a></li>
+                            <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Menu secundario-->
+            <nav class="navbar navbar-expand-lg navbar-dark colorM">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="mailto:ferreteriasoniaylibrado7@gmail.com"><img src="Imagenes/Iconos/IconoMensaje.png" height="25" width="25" style="margin-bottom: 4px; margin-right: 5px;"><strong> Servicio al cliente</strong></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <input class="BuscarTXT" type="text" placeholder="Buscar" id="TXtbuscar" style="margin-right: 15px;">
+                                <button class="btn btn-outline-dark" id="BTbuscar" style="margin-right: 30px; margin-bottom: 4px;"><strong>Buscar</strong></button>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="productos.html" style="margin-right: 15px;">Productos</a></li>
+                        </ul>
+                        <form class="d-flex">
+                            <button onclick="abrirCarrito()" class="btn btn-outline-dark" type="button">
+                                <i class="bi-cart-fill me-1"></i>
+                                <img src="Imagenes/Iconos/carro.png" width="20px" height="20px" style="margin-right: 10px; margin-bottom: 5px;">
+                                <strong>Carrito</strong>
+                                <span class="badge text-white ms-1 rounded-pill">0</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <!--Carrito-->
+            <div id="carritoModal" class="modal">
+                <div class="modal-content">
+                    <span class="Close" onclick="cerrarCarrito()">&times;</span>
+                    <h2>Productos</h2>
+                    <ul id="listaDeProductos"></ul>
+                    <div class="total-carrito">Total: <span id="totalCarrito">0</span></div>
+                    <button class="Btn btn-primary" style="margin-top: 10px;" onclick="abrirChat()">Realizar pedido</button>
+                </div>
+            </div>
+            <!-- Encabezado-->
+            <header class="bg-dark py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-5 fw-bolder text-white mb-2">Bienvenidos a nuestro sitio web</h1>
+                                <p class="lead fw-normal text-white-50 mb-4">En Ferreteria sonia y librado ofrecemos una amplia variedad de productos ferreteros a un buen precio y ofreciendo un excelente servicio para todos nuestros clientes.</p>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#caracteristicas">Ver mas</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="Imagenes/ImagenesInicio/ImagenInicio.jpeg" alt="Herramientas" width="600 px" height="400"/></div>
+                    </div>
+                </div>
+            </header>
+            <!-- Seccion de caracteristicas-->
+            <section class="bg-light py-5" id="caracteristicas">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Las mejores heramientas y productos para tu hogar.</h2></div>
+                        <div class="col-lg-8">
+                            <h5 class="fw-bolder mb-0" style="margin-bottom: 10px;">Ofrecemos.</h5>
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><img src="Imagenes/Iconos/Icono1.png" width="35px" height="35px"></div>
+                                    <h2 class="h5">Buenos precios</h2>
+                                    <p class="mb-0">En ferreteria S y L ofrecemos precios accesibles para todos nuestros clientes.</p>
+                                </div>
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><img src="Imagenes/Iconos/Icono2.png" width="35px" height="35px"></div>
+                                    <h2 class="h5">Amplia gama de productos</h2>
+                                    <p class="mb-0">Ofrecemos una gran variedad de procuctos para cubrir todas las necesidades de nuestros clientes.</p>
+                                </div>
+                                <div class="col mb-5 mb-md-0 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><img src="Imagenes/Iconos/Icono3.png" width="35px" height="35px"></i></div>
+                                    <h2 class="h5">Buena atención al cliente</h2>
+                                    <p class="mb-0">Contamos con un personal capacitado para atender las necesidades de nuestros clientes de forma eficiente.</p>
+                                </div>
+                                <div class="col h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><img src="Imagenes/Iconos/Icono3.png"  width="35px" height="35px"></i></div>
+                                    <h2 class="h5">Alta calidad en los productos</h2>
+                                    <p class="mb-0">Ofrecemos productos eficientes y de buena calidad para resolver las necesidades de nuestros clientes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Seccion de la ubicacion -->
+            <section>
+                <div class="py-5 colorM">
+                    <div class="container px-5 my-5">
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-10 col-xl-7">
+                                <div class="text-center">
+                                    <h2 class="fs-4 mb-4 fst-italic">Estamos ubicados en: </h2>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3757.4847656839383!2d-71.10396042668283!3d19.649313333728053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb1a1b0fa455973%3A0x745ea84082c9f0e!2sFerreter%C3%ADa%20Sonia%20y%20Librado!5e0!3m2!1ses-419!2sdo!4v1708198381169!5m2!1ses-419!2sdo" width="600" height="450" style="border-radius: 7px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Alexis perez 2024</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Politicas de privacidad</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terminos y condiciones</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contactos</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="Funciones.js"></script>
+
+    </body>
+</html>

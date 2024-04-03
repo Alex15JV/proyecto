@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Productos</title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0 bg-light">
+        <!-- Seccion de navegacion-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><img src="Imagenes/Logo.png" height="45px" width="45px" style="border-radius: 9px; margin-right: 20px;"><strong> Ferreteria S y L</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobrenosotros.html">Sobre nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Menu secundario-->
+        <nav class="navbar navbar-expand-lg navbar-dark colorM">
+            <div class="container px-5">
+                <a class="navbar-brand" href="mailto:ferreteriasoniaylibrado7@gmail.com"><img src="Imagenes/Iconos/IconoMensaje.png" height="25" width="25" style="margin-bottom: 4px; margin-right: 5px;"><strong> Servicio al cliente</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <input class="BuscarTXT" type="text" placeholder="Buscar" id="TXtbuscar" style="margin-right: 15px;">
+                            <button class="btn btn-outline-dark" id="BTbuscar" style="margin-right: 30px; margin-bottom: 4px;"><strong>Buscar</strong></button>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="productos.html" style="margin-right: 15px;">Productos</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <button onclick="abrirCarrito()" class="btn btn-outline-dark" type="button">
+                            <i class="bi-cart-fill me-1"></i>
+                            <img src="Imagenes/Iconos/carro.png" width="20px" height="20px" style="margin-right: 10px; margin-bottom: 5px;">
+                            <strong>Carrito</strong>
+                            <span class="badge text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div id="carritoModal" class="modal">
+            <div class="modal-content">
+                <span class="Close" onclick="cerrarCarrito()">&times;</span>
+                <h2>Productos</h2>
+                <ul id="listaDeProductos"></ul>
+                <div class="total-carrito">Total: <span id="totalCarrito">0</span></div>
+                <button class="Btn btn-primary" style="margin-top: 10px;" onclick="abrirChat()">Realizar pedido</button>
+            </div>
+        </div>
+        <!-- Encabezado-->
+        <header class="bg-dark py-5">
+            <!-- Menu desplegable-->
+            <div class="dr">
+                <ul class="dropdown dr">
+                    <li class="dropdown"><a href="#" class="dropdown-toggle"><strong>Categorias</strong></a>
+                        <ul role="menu" class="dropdown-menu">
+                            <li>
+                                <ul>
+                                  <li><a href="#categoria1">Categoria 1</a></li>
+                                  <li><a href="#categoria2">Categoria 2</a></li>
+                                  <li><a href="#categoria3">Categoria 3</a></li>
+                                  <li><a href="#categoria4">Categoria 4</a></li>
+                                  <li><a href="#categoria5">Categoria 5</a></li>
+                                  <li><a href="#categoria6">Categoria 6</a></li>
+                                  <li><a href="#categoria7">Categoria 7</a></li>
+                                  <li><a href="#categoria8">Categoria 8</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>       
+                <!-- Nombre de la seccion -->
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center justify-content-center">
+                    <div class="col-lg-es col-xl-es col-xxl-es">
+                        <div class="my-5 text-center text-xl-start">
+                            <h1 class="display-5 fw-bolder text-white mb-2">Productos</h1>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+                        
+        </header>
+
+        <!-- Seccion de las categorias-->
+        <section>
+            <!-- Primera categoria-->
+            <div id="categoria1">
+                <h2 class="h5 color" style="text-align: center;">Categoria 1</h2>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 1</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto1')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria1-producto1" class="ficha-tecnica" data-precio="250">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto1')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria1-producto1" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria1', 'producto1')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto1')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS1" value="250" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto1')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 2-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 2</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto2')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria1-producto2" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto2')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria1-producto2" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria1', 'producto2')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto2')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS2-categoria1-producto2" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto2')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 3-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 3</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto3')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria1-producto3" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto3')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria1-producto3" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria1', 'producto3')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto3')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS3-categoria1-producto3" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto3')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 4-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 4</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto4')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria1-producto4" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto4')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria1-producto4" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria1', 'producto4')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto4')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS4-categoria1-producto4" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto4')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 5-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 5</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto5')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria1-producto5" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto5')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria1-producto5" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria1', 'producto5')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto5')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS5-categoria1-producto5" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto5')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 6-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 6</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto6')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria1-producto6" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto6')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria1-producto6" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria1', 'producto6')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto6')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS6-categoria1-producto6" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto6')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 7-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 7</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto7')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria1-producto7" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto7')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria1-producto7" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria1', 'producto7')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto7')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS7-categoria1-producto7" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto7')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 8-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 8</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto8')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria1-producto8" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto8')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria1-producto8" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria1', 'producto8')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto8')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS8-categoria1-producto8" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto8')">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>    
+            <a href="productos.html" class="btn_volver">Volver</a>
+        </section>
+        <!-- Seccion de la categoria 2-->
+        <section>
+            <div id="categoria2">
+                <h2 class="h5 color" style="text-align: center;">Categoria 2</h2>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 1</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto1',)"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria2-producto1" class="ficha-tecnica" data-precio="250">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>HOla</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto1')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria2-producto1" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria2', 'producto1')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto1')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS1-categoria2-producto1" value="250" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto1')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 2-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 2</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto2')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria2-producto2" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto2')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria2-producto2" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria2', 'producto2')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto2')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS2-categoria2-producto2" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto2')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 3-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 3</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto3')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria2-producto3" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto3')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria2-producto3" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria2', 'producto3')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto3')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS3-categoria2-producto3" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto3')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 4-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 4</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto4')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria2-producto4" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto4')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria2-producto4" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria2', 'producto4')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto4')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS4-categoria2-producto4" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto4')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 5-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 5</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto5')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria2-producto5" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto5')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria2-producto5" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria2', 'producto5')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto5')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS5-categoria2-producto5" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto5')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 6-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 6</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto6')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria2-producto6" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto6')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria2-producto6" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria2', 'producto6')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto6')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS6-categoria2-producto6" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto6')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 7-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 7</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto7')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria2-producto7" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto7')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria2-producto7" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria2', 'producto7')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto7')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS7-categoria2-producto7" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto7')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 8-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/Prueba.jpg" height="200px" width="200px"></div>
+                                <h2 class="h5">Producto 8</h2>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto8')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria2-producto8" class="ficha-tecnica" data-precio="300">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/Prueba.jpg" width="100" height="100">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Nombre</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Marca</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>Precio</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto8')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria2-producto8" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria2', 'producto8')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto8')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS8-categoria2-producto8" value="300" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto8')">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>    
+            <a href="productos.html" class="btn_volver">Volver</a>
+        </section>
+    </main>
+     <!-- footer-->
+    <footer class="bg-dark py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Alexis Perez 2024</div></div>
+                <div class="col-auto">
+                    <a class="link-light small" href="#!">Politicas de privacidad</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Terminos y condiciones</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Contactos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="Funciones.js"></script>
+
+</body>
+</html>
