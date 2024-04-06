@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Sobre nosotros</title>
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+        <!-- Seccion de navegacion-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+            <img src="Imagenes/logo2.jpeg" height="100px" width="100px" style="border-radius: 15px; margin-left: 90px;">
+            <div class="container px-5">
+                <a class="navbar-brand TF" href="index.html"><strong> Ferreteria S y L</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right: 110px;">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobrenosotros.html">Sobre nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Menu secundario-->
+        <nav class="navbar navbar-expand-lg navbar-dark colorM">
+            <div class="container px-5">
+                <a class="navbar-brand" href="mailto:ferreteriasoniaylibrado7@gmail.com"><img src="Imagenes/Iconos/IconoMensaje.png" height="25" width="25" style="margin-bottom: 4px; margin-right: 5px;"><strong> Servicio al cliente</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <input class="BuscarTXT" type="text" placeholder="Buscar" id="TXtbuscar" style="margin-right: 15px;">
+                            <button class="btn btn-outline-dark" id="BTbuscar" style="margin-right: 30px; margin-bottom: 4px;"><strong>Buscar</strong></button>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="productos.html" style="margin-right: 15px;">Productos</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <button onclick="abrirCarrito()" class="btn btn-outline-dark" type="button">
+                            <i class="bi-cart-fill me-1"></i>
+                            <img src="Imagenes/Iconos/carro.png" width="20px" height="20px" style="margin-right: 10px; margin-bottom: 5px;">
+                            <strong>Carrito</strong>
+                            <span class="badge text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div id="carritoModal" class="modal">
+            <div class="modal-content">
+                <span class="Close" onclick="cerrarCarrito()">&times;</span>
+                <h2>Productos</h2>
+                <ul id="listaDeProductos"></ul>
+                <div class="total-carrito">Total: <span id="totalCarrito">0</span></div>
+                <button class="Btn btn-primary" style="margin-top: 10px;" onclick="abrirChat()">Realizar pedido</button>
+            </div>
+        </div>
+            <!-- Seccion del encabezado -->
+            <header class="py-5 bg-dark">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xxl-6">
+                            <div class="text-center my-5">
+                                <h1 class="fw-bolder mb-3" style="color: #fff;" >Sobre nosotros.</h1>
+                                <p class="lead fw-normal text-muted mb-4">Ofrecemos una gran cantidad de productos
+                                    de buena calidad para satisfacer las necesidades de construcción, remodelación y
+                                    reparación de nuestros clientes.</p>
+                                <a class="btn btn-primary btn-lg" href="#Historia">Conoce sobre nosotros</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- primera seccion-->
+            <section class="py-5 bg-light" id="Historia">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6"></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder" style="color: black;">Inicios</h2>
+                            <p class="lead fw-normal text-muted mb-0">La ferretería Sonia y Librado fue
+                                creada en el año 1984, para cubrir las necesidades de los habitantes de la zona de
+                                Laguna salada, puesto que esta fue el primer negocio ferretero creado en la zona.
+                                Esta ferretería fue fundada por el señor Librado de Jesús acosta y se a mantenido
+                                en funcionamiento hasta la fecha</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- segunda seccion-->
+            <section class="py-5 bg-dark">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6 order-first order-lg-last"></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder" style="color: #fff;">Mision</h2>
+                            <p class="lead fw-normal text-muted mb-0">Tenemos la misión de ofrecer a nuestros clientes servicios
+                                y productos ferreteros de alta calidad para cubrir sus necesidades, por medio de la
+                                distribución y venta de materiales ferreteros a todos los puntos del municipio de
+                                Laguna salada para promover su desarrollo. Siempre comprometidos con el crecimiento y
+                                desarrollo de nuestra comunidad. </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-5 bg-light" id="Historia">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6"></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder" style="color: black;">Valores</h2>
+                            <p class="lead fw-normal text-muted mb-0">
+                                <ul>
+                                    <li>Integridad</li>
+                                    <li>Honestidad</li>
+                                    <li>Compromiso</li>
+                                    <li>Respeto</li>
+                                    <li>Responsabilidad</li>
+                                    <li>Servicio</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Alexis Perez 2024</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Politicas de privacidad</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terminos y condiciones</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
