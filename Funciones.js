@@ -112,6 +112,23 @@ function ActualizarPrecio(cambioPrecio, cantidad,IDPrecio){
     
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    var togglerButtons = document.querySelectorAll('.navbar-toggler');
+
+    togglerButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var target = this.getAttribute('data-bs-target');
+            var collapse = document.querySelector(target);
+
+            if (collapse.classList.contains('show')) {
+                collapse.classList.remove('show');
+            } else {
+                collapse.classList.add('show');
+            }
+        });
+    });
+});
+
 document.getElementById('formularioContacto').addEventListener('submit', function(event) {
     event.preventDefault();
 
