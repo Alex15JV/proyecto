@@ -127,7 +127,7 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
             }
         }
     };
-    SL.send(FormData);
+    SL.send(DatosFormulario);
 });
 
 document.getElementById('BTbuscar').addEventListener('click', function() {
