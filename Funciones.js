@@ -122,6 +122,8 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
         if (SL.readyState === XMLHttpRequest.DONE){
             if (SL.status === 200){
                 alert(SL.responseText);
+
+                document.getElementById('formularioContacto').reset();
             }else{
                 alert('error al enviar el formulario. Por favor intentelo de nuevo')
             }
