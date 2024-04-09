@@ -112,6 +112,24 @@ function ActualizarPrecio(cambioPrecio, cantidad,IDPrecio){
     
 }
 
+document.getElementById('formularioContacto').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var DatosFormulario = new FormData(this);
+    var SL = new XMLHttpRequest();
+    SL.open('POST', 'https://astucious-latch.000webhostapp.com/enviar.php', true);
+    SL.onreadystatechange = function(){
+        if (SL.readyState === XMLHttpRequest.DONE){
+            if (SL.status === 200){
+                alert(SL.responseText);
+            }else{
+                alert('error al enviar el formulario. Por favor intentelo de nuevo')
+            }
+        }
+    };
+    SL.send(FormData);
+});
+
 document.getElementById('BTbuscar').addEventListener('click', function() {
     var BTbuscar = document.getElementById('BTbuscar').value.toLowerCase();
     var Contenido = document.querySelectorAll('.contenido');
