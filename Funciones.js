@@ -48,6 +48,12 @@ function abrirCarrito() {
     var badgeCarrito = document.querySelector('.badge');
     badgeCarrito.textContent = carrito.length;
 }
+
+function abrirLogin() {
+    var modal = document.getElementById("login");
+    modal.style.display = "block";
+}
+
 function EliminarProducto(index) {
     carrito.splice(index, 1);
     abrirCarrito();

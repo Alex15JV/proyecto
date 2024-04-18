@@ -12,15 +12,18 @@
     <main class="flex-shrink-0 bg-light">
         <!-- Seccion de navegacion-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-light">
-            <img src="Imagenes/logo2.jpeg" height="100px" width="100px" style="border-radius: 15px; margin-left: 90px;">
+            <img src="Imagenes/logo.webp" height="100px" width="100px" style="border-radius: 15px; margin-left: 90px;">
             <div class="container px-5">
                 <a class="navbar-brand TF" href="index.html"><strong> Ferreteria S y L</strong></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right: 110px;">
                         <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <div class="barra_"></div>
                         <li class="nav-item"><a class="nav-link" href="sobrenosotros.html">Sobre nosotros</a></li>
+                        <div class="barra_"></div>
                         <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                        <div class="barra_"></div>
                         <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
@@ -37,8 +40,10 @@
                             <input class="BuscarTXT" type="text" placeholder="Buscar" id="TXtbuscar" style="margin-right: 15px;">
                             <button class="btn btn-outline-dark" id="BTbuscar" style="margin-right: 30px; margin-bottom: 4px;"><strong>Buscar</strong></button>
                         </li>
+                        <div class="barra_"></div>
                         <li class="nav-item"><a class="nav-link" href="productos.html" style="margin-right: 15px;">Productos</a></li>
                     </ul>
+                    <div class="barra_"></div>
                     <form class="d-flex">
                         <button onclick="abrirCarrito()" class="btn btn-outline-dark" type="button">
                             <i class="bi-cart-fill me-1"></i>
@@ -47,17 +52,40 @@
                             <span class="badge text-white ms-1 rounded-pill">0</span>
                         </button>
                     </form>
+                    <button  id="Login-show" class="btn btn-outline-dark" onclick="abrirLogin()" style="margin-left: 15px;">
+                        <img src="Imagenes/Iconos/acceso.png">
+                    </button>
                 </div>
             </div>
         </nav>
         <!-- carrito-->
-        <div id="carritoModal" class="ficha-tecnica">
+        <div id="carritoModal" class="carrito">
             <div class="modal-content">
                 <span class="Close" onclick="cerrarCarrito()">&times;</span>
                 <h2>Productos</h2>
                 <ul id="listaDeProductos"></ul>
                 <div class="total-carrito">Total: <span id="totalCarrito">0</span></div>
                 <button class="Btn btn-primary" style="margin-top: 10px;" onclick="abrirChat()">Realizar pedido</button>
+            </div>
+        </div>
+        <!--Registro-->
+        <div id="login" class="row gx-5 justify-content-center login-c">
+            <div class="modal-content">
+                <form class="form-control" action="" method="post">
+                    <h5>Iniciar sesion</h5>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" name="Usuario" id="Usuario" type="text" data-sb-validations="required" />
+                        <label for="Usuario">Usuario</label>
+                        <div class="invalid-feedback" data-sb-feedback="Usuario:required">Ingrese su Usuario.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" name="contraseña" id="constraseña" type="text" data-sb-validations="required" />
+                        <label for="contraseña">Contraseña</label>
+                        <div class="invalid-feedback" data-sb-feedback="contraseña:required">Ingrese su Contraseña.</div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-dark">Iniciar sesión</button>
+                    <div><a href="InicioSecion.html">Registrate</a></div>
+                </form>
             </div>
         </div>
         <!-- Encabezado-->
@@ -71,12 +99,9 @@
                                 <ul>
                                   <li><a href="#categoria1">Herramientas manuales</a></li>
                                   <li><a href="#categoria2">Productos para pintar</a></li>
-                                  <li><a href="#categoria3">Categoria 3</a></li>
-                                  <li><a href="#categoria4">Categoria 4</a></li>
-                                  <li><a href="#categoria5">Categoria 5</a></li>
-                                  <li><a href="#categoria6">Categoria 6</a></li>
-                                  <li><a href="#categoria7">Categoria 7</a></li>
-                                  <li><a href="#categoria8">Categoria 8</a></li>
+                                  <li><a href="#categoria3">Productos de Fontaneria</a></li>
+                                  <li><a href="#categoria4">Cerrajeria</a></li>
+                                  
                                 </ul>
                             </li>
                         </ul>
@@ -105,9 +130,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Destornillador plano.jpeg" height="200px" width="200px" style="border-radius: 5px;"></div>
-                                <h2 class="h5 TFP">Destornillador</h2>
-                                <p style="margin-bottom: 5px;"> Precio: 145.00</p>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Destornillador plano.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Destornillador plano</h2>
+                                <p> Precio: 145.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto1')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -115,7 +140,7 @@
                     <div id="ficha-tecnica-categoria1-producto1" class="ficha-tecnica" data-precio="145">
                         <div class="row">
                             <div class="col-md-5 CI">
-                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Destornillador plano.jpeg" width="100ox" height="100px">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Destornillador plano.jpeg" class="IMEG mb-3">
                             </div>
                         </div>
                         <table>
@@ -152,9 +177,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Martillo.jpeg" height="200px" width="260px" style="border-radius: 5px;"></div>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Martillo.jpeg" height="250px" width="250px"></div>
                                 <h2 class="h5 TFP">Martillo</h2>
-                                <p style="margin-bottom: 5px;"> Precio: 1,225.00</p>
+                                <p> Precio: 1,225.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto2')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -199,9 +224,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Pinza.jpeg" height="200px" width="200px" style="border-radius: 5px;"></div>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Pinza.jpeg" class="imagen-producto"></div>
                                 <h2 class="h5 TFP">Pinzas</h2>
-                                <p style="margin-bottom: 5px;"> Precio: 425.00</p>
+                                <p> Precio: 425.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto3')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -246,9 +271,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Alicate azul.jpeg" height="200px" width="200px" style="border-radius: 5px;"></div>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Alicate azul.jpeg" class="imagen-producto"></div>
                                 <h2 class="h5 TFP">Alicate</h2>
-                                <p style="margin-bottom: 5px;"> Precio: 400.00</p>
+                                <p> Precio: 400.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto4')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -293,9 +318,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Tijera hojalata.jpeg" height="200px" width="200px" style="border-radius: 5px;"></div>
-                                <h2 class="h5 TFP">Tijeras Hojalata</h2>
-                                <p style="margin-bottom: 5px;"> Precio: 500.00</p>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Tijera hojalata.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Tijeras para hojalata</h2>
+                                <p> Precio: 500.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto5')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -340,9 +365,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Llave 15mm.jpeg" height="200px" width="200px" style="border-radius: 5px;"></div>
-                                <h2 class="h5 TFP">Llave 15mm</h2>
-                                <p style="margin-bottom: 5px;"> Precio: 160.00</p>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Llave 15mm.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Llave de 15mm</h2>
+                                <p> Precio: 160.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto6')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -387,9 +412,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Llave 16mm.jpeg" height="200px" width="200px" style="border-radius: 5px;"></div>
-                                <h2 class="h5 TFP">Llave 16mm</h2>
-                                <p style="margin-bottom: 5px;"> Precio: 200.00</p>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Llave 16mm.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Llave de 16mm</h2>
+                                <p> Precio: 200.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto7')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -434,9 +459,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Llave 19mm.jpeg" height="200px" width="200px" style="border-radius: 5px;"></div>
-                                <h2 class="h5 TFP">Llave 19mm</h2>
-                                <p style="margin-bottom: 5px;"> Precio: 290.00</p>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Llave 19mm.jpeg" width="170px" height="170px"></div>
+                                <h2 class="h5 TFP">Llave de 19mm</h2>
+                                <p> Precio: 290.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto8')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -481,16 +506,17 @@
             </div>    
             <a href="productos.html" class="btn_volver">Volver</a>
         </section>
-        <!-- Seccion de la categoria 2-->
-        <section>
+         <!-- Seccion de la categoria 2-->
+         <section>
             <div id="categoria2">
                 <h2 class="h5 color" style="text-align: center;">Productos para pintar</h2>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Pintura acrilica.jpeg" height="150px" width="150px" style="border-radius: 5px;"></div>
-                                <h2 class="h5">Pintura acrilica</h2>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/pintrua acrilica.jpg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Pintura acrilica</h2>
+                                <p> Precio: 1,250.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto1',)"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -498,7 +524,7 @@
                     <div id="ficha-tecnica-categoria2-producto1" class="ficha-tecnica" data-precio="1250">
                         <div class="row">
                             <div class="col-md-5 CI">
-                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Pintura acrilica.jpeg" width="50px" height="50px">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/pintrua acrilica.jpg" style="object-fit: cover; height: 100%; width: 100%;">
                             </div>
                         </div>
                         <table>
@@ -535,8 +561,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Pintura para interiores.jpeg" height="121px" width="121px" style="border-radius: 5px;"></div>
-                                <h2 class="h5">Pintura arquitectonica</h2>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/pintura interiores.jpg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP" style="font-size: 18px;">Pintura arquitectonica</h2>
+                                <p> Precio: 550.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto2')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -544,7 +571,7 @@
                     <div id="ficha-tecnica-categoria2-producto2" class="ficha-tecnica" data-precio="550">
                         <div class="row">
                             <div class="col-md-5 CI">
-                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Pintura para interiores.jpeg" width="100px" height="100px">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/pintura interiores.jpg">
                             </div>
                         </div>
                         <table>
@@ -581,8 +608,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Espatula.jpeg" height="170px" width="170px" style="border-radius: 5px;"></div>
-                                <h2 class="h5">Espatula</h2>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Espatula.jpeg" height="175px" width="175px"></div>
+                                <h2 class="h5 TFP">Espatula</h2>
+                                <p> Precio: 100.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto3')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -590,7 +618,7 @@
                     <div id="ficha-tecnica-categoria2-producto3" class="ficha-tecnica" data-precio="100">
                         <div class="row">
                             <div class="col-md-5 CI">
-                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Espatula.jpeg" width="100px" height="100px">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Espatula.jpeg" style="object-fit: cover; height: 50%; width: 50%;">
                             </div>
                         </div>
                         <table>
@@ -627,8 +655,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Brocha 1''.jpeg" height="200px" width="200px" style="border-radius: 5px;"></div>
-                                <h2 class="h5">Brocha 1''</h2>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Brocha 1''.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Brocha de 1''</h2>
+                                <p> Precio: 50.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto4')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -642,7 +671,7 @@
                         <table>
                             <tr>
                                 <th>Nombre del producto:</th>
-                                <td>Brocha</td>
+                                <td>Brocha de 1''</td>
                             </tr>
                             <tr>
                                 <th>Marca del producto:</th>
@@ -673,8 +702,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Brocha 2media''.jpeg" height="190px" width="190px" style="border-radius: 5px;"></div>
-                                <h2 class="h5">Brocha 2''</h2>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Brocha 2media''.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Brocha de 2''</h2>
+                                <p> Precio: 115.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto5')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -688,7 +718,7 @@
                         <table>
                             <tr>
                                 <th>Nombre del producto:</th>
-                                <td>Brocha</td>
+                                <td>Brocha de 2''</td>
                             </tr>
                             <tr>
                                 <th>Marca del producto:</th>
@@ -719,8 +749,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Brocha 3''.jpeg" height="200px" width="200px" style="margin-bottom: 10px; border-radius: 5px;"></div>
-                                <h2 class="h5">Brocha 3''</h2>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Brocha 3''.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Brocha de 3''</h2>
+                                <p> Precio: 120.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto6')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -734,7 +765,7 @@
                         <table>
                             <tr>
                                 <th>Nombre del producto:</th>
-                                <td>Brocha</td>
+                                <td>Brocha de 3''</td>
                             </tr>
                             <tr>
                                 <th>Marca del producto:</th>
@@ -765,8 +796,9 @@
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
                             <div class="card-body p-5 color1">
-                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Brocha 4''.jpeg" height="190px" width="190px" style="margin-bottom: 10px; border-radius: 5px;"></div>
-                                <h2 class="h5">Brocha 4''</h2>
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Brocha 4''.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Brocha  de 4''</h2>
+                                <p> Precio: 200.00</p>
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria2', 'producto7')"><strong>Detalles</strong></button>
                             </div>
                         </div>
@@ -780,7 +812,7 @@
                         <table>
                             <tr>
                                 <th>Nombre del producto:</th>
-                                <td>Brocha</td>
+                                <td>Brocha de 4''</td>
                             </tr>
                             <tr>
                                 <th>Marca del producto:</th>
@@ -806,6 +838,635 @@
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto7')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS7" value="200" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto7')">Agregar al carrito</button>
+                    </div>
+                    
+                </div>
+            </div>    
+            <a href="productos.html" class="btn_volver">Volver</a>
+        </section>
+        <!-- Seccion de la categoria 3-->
+        <section>
+            <div id="categoria3">
+                <h2 class="h5 color" style="text-align: center;">Productos de Fontaneria</h2>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/tubo pvc 9x14.png" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Tubo pvc 9x14</h2>
+                                <p> Precio: 750.00</p>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria3', 'producto1',)"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria3-producto1" class="ficha-tecnica" data-precio="750">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/tubo pvc 9x14.png" style="object-fit: cover; height: 100%; width: 100%;">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Tubo pvc 9x14</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>750.00</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto1')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria3-producto1" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria3', 'producto1')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto1')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS1" value="1250" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto1')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 2-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Tubo pvc semi-presion.jpg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP" style="font-size: 18px; ">Tubo pvc semi-Presión</h2>
+                                <p> Precio: 550.00</p>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria3', 'producto2')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria3-producto2" class="ficha-tecnica" data-precio="550">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Tubo pvc semi-presion.jpg" width="100px" height="100px">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Tubo pvc semi-Presión</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>550.00</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto2')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria3-producto2" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria3', 'producto2')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto2')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS2" value="550" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto2')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 3-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Pvc wet dry.png" height="185" width="185px"></div>
+                                <h2 class="h5 TFP">PVC wet-dry</h2>
+                                <p> Precio: 1,490.00</p>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria3', 'producto3')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria3-producto3" class="ficha-tecnica" data-precio="1490">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Pvc wet dry.png" width="100px" height="100px">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>PVC wet-dry</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Lanco</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>1,490.00</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto3')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria3-producto3" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria3', 'producto3')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto3')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS6" value="1490" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto3')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 4-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Union 2''.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Union de 2''</h2>
+                                <p> Precio: 40.00</p>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria3', 'producto4')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria3-producto4" class="ficha-tecnica" data-precio="40">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Union 2''.jpeg" style="object-fit: cover; height: 100%; width: 100%;">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Union de 2''</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>40.00</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto4')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria3-producto4" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria3', 'producto4')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto4')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS3" value="40" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto4')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 5-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Codos 2x90.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Codo de 2x90</h2>
+                                <p> Precio: 40.00</p>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria3', 'producto5')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria3-producto5" class="ficha-tecnica" data-precio="50">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Codos 2x90.jpeg" width="100px" height="100px">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Codo de 2x90</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>40.00</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto5')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria3-producto5" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria3', 'producto5')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto5')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS4" value="50" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto5')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 6-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Codo 4''x90.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Codo de 4''x90</h2>
+                                <p> Precio: 150.00</p>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria3', 'producto6')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria3-producto6" class="ficha-tecnica" data-precio="150">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Codo 4''x90.jpeg" width="100px" height="100px">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Codo de 4''x90</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>150.00</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto6')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria3-producto6" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria3', 'producto6')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto6')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS5" value="115" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto6')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 7-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/PVC.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">PVC Y conduit</h2>
+                                <p> Precio: 200.00</p>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria3', 'producto7')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria3-producto7" class="ficha-tecnica" data-precio="200">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/PVC.jpeg" width="100px" height="100px">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Pvc y conduit</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Tangit</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>200.00</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto7')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria3-producto7" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria3', 'producto7')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto7')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS7" value="200" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto7')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 8-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Tee 3'' presion.jpeg" height="150px" width="150px"></div>
+                                <h2 class="h5 TFP">Tee de 3''</h2>
+                                <p> Precio: 290.00</p>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria3', 'producto8')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria3-producto8" class="ficha-tecnica" data-precio="290">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Tee 3'' presion.jpeg" width="100px" height="100px">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Tee de 3''</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>290.00</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto8')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria3-producto8" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria3', 'producto8')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto8')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS7" value="290" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto8')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 9-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Tapones 4''.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Tapones de 4''</h2>
+                                <p> Precio: 225.00</p>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria3', 'producto9')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria3-producto9" class="ficha-tecnica" data-precio="290">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Tapones 4''.jpeg" width="100px" height="100px">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Tapones de 4''</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>225.00</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto9')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria3-producto9" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria3', 'producto9')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto9')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS7" value="225" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto9')">Agregar al carrito</button>
+                    </div>
+                    
+                </div>
+            </div>    
+            <a href="productos.html" class="btn_volver">Volver</a>
+        </section>
+        <!-- Seccion de la categoria 4-->
+        <section>
+            <div id="categoria4">
+                <h2 class="h5 color" style="text-align: center;">Cerrajeria</h2>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Cerradura residencial.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Cerradura residencial</h2>
+                                <p> Precio: 375.00</p>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria4', 'producto1',)"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria4-producto1" class="ficha-tecnica" data-precio="375">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Cerradura residencial.jpeg" style="object-fit: cover; height: 100%; width: 100%;">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Cerradura residencial</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Yanex</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>375.00</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria4', 'producto1')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria4-producto1" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria4', 'producto1')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria4', 'producto1')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS1" value="1250" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria4', 'producto1')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 2-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Candado yale.jpeg" height="140px" width="140px"></div>
+                                <h2 class="h5 TFP">Candado yale</h2>
+                                <p> Precio: 875.00</p>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria4', 'producto2')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria4-producto2" class="ficha-tecnica" data-precio="550">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Candado yale.jpeg" width="100px" height="100px">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Cnadado yale</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Yale</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>875.00</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria4', 'producto2')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria3-producto4" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria4', 'producto2')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria4', 'producto2')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS2" value="550" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria4', 'producto2')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 3-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Bisagra.png" height="130px" width="130px"></div>
+                                <h2 class="h5 TFP">Bisagra</h2>
+                                <p> Precio: 35.00</p>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria4', 'producto3')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria4-producto3" class="ficha-tecnica" data-precio="35">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Bisagra.png" width="100px" height="100px">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Bisagra</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Lion</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>35.00</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria4', 'producto3')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria4-producto3" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria4', 'producto3')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria4', 'producto3')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS6" value="1490" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria4', 'producto3')">Agregar al carrito</button>
+                    </div>
+                    <!-- Producto 4-->
+                    <div class="col-lg-es-p col-xl-es-p">
+                        <div class="card mb-5 mb-xl-5">
+                            <div class="card-body p-5 color1">
+                                <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Pasador para porton pequeño.jpeg" class="imagen-producto"></div>
+                                <h2 class="h5 TFP">Pasador para puerta</h2>
+                                <p> Precio: 60.00</p>
+                                <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria4', 'producto4')"><strong>Detalles</strong></button>
+                            </div>
+                        </div>
+                    </div>   
+                    <div id="ficha-tecnica-categoria4-producto4" class="ficha-tecnica" data-precio="40">
+                        <div class="row">
+                            <div class="col-md-5 CI">
+                                <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Pasador para porton pequeño.jpeg" style="object-fit: cover; height: 100%; width: 100%;">
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Nombre del producto:</th>
+                                <td>Pasador para puerta pequeño</td>
+                            </tr>
+                            <tr>
+                                <th>Marca del producto:</th>
+                                <td>Hardman</td>
+                            </tr>
+                            <tr>
+                                <th>Precio del producto:</th>
+                                <td>60.00</td>
+                            </tr>
+                            <tr>
+                                <th>Descripcion:</th>
+                                <td>Descripcion</td>
+                            </tr>
+                            <tr>
+                                <th>Cantidad:</th>
+                                <td>
+                                    <button class="btn btn-outline-dark " onclick="Restar('categoria4', 'producto4')">-</button>
+                                    <input type="text" id="Cantidadproducto-categoria4-producto4" value="1" readonly>
+                                    <button class="btn btn-outline-dark" onclick="Sumar('categoria4', 'producto4')">+</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria4', 'producto4')" >Cerrar</button>
+                        <input style="margin-right: 65px;" type="text" id="precioS3" value="40" readonly> 
+                        <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria4', 'producto4')">Agregar al carrito</button>
                     </div>
                     
                 </div>

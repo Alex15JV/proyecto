@@ -12,15 +12,18 @@
         <main class="flex-shrink-0">
         <!-- Seccion de navegacion-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-light">
-            <img src="Imagenes/logo2.jpeg" height="100px" width="100px" style="border-radius: 15px; margin-left: 90px;">
+            <img src="Imagenes/logo.webp" height="100px" width="100px" style="border-radius: 15px; margin-left: 90px;">
             <div class="container px-5">
                 <a class="navbar-brand TF" href="index.html"><strong> Ferreteria S y L</strong></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right: 110px;">
                         <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <div class="barra_"></div>
                         <li class="nav-item"><a class="nav-link" href="sobrenosotros.html">Sobre nosotros</a></li>
+                        <div class="barra_"></div>
                         <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                        <div class="barra_"></div>
                         <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
@@ -37,8 +40,10 @@
                             <input class="BuscarTXT" type="text" placeholder="Buscar" id="TXtbuscar" style="margin-right: 15px;">
                             <button class="btn btn-outline-dark" id="BTbuscar" style="margin-right: 30px; margin-bottom: 4px;"><strong>Buscar</strong></button>
                         </li>
+                        <div class="barra_"></div>
                         <li class="nav-item"><a class="nav-link" href="productos.html" style="margin-right: 15px;">Productos</a></li>
                     </ul>
+                    <div class="barra_"></div>
                     <form class="d-flex">
                         <button onclick="abrirCarrito()" class="btn btn-outline-dark" type="button">
                             <i class="bi-cart-fill me-1"></i>
@@ -47,16 +52,40 @@
                             <span class="badge text-white ms-1 rounded-pill">0</span>
                         </button>
                     </form>
+                    <button  id="Login-show" class="btn btn-outline-dark" onclick="abrirLogin()" style="margin-left: 15px;">
+                        <img src="Imagenes/Iconos/acceso.png">
+                    </button>
                 </div>
             </div>
         </nav>
-        <div id="carritoModal" class="ficha-tecnica">
+        <!--Carrito-->
+        <div id="carritoModal" class="carrito">
             <div class="modal-content">
                 <span class="Close" onclick="cerrarCarrito()">&times;</span>
                 <h2>Productos</h2>
                 <ul id="listaDeProductos"></ul>
                 <div class="total-carrito">Total: <span id="totalCarrito">0</span></div>
                 <button class="Btn btn-primary" style="margin-top: 10px;" onclick="abrirChat()">Realizar pedido</button>
+            </div>
+        </div>
+        <!--Registro-->
+        <div id="login" class="row gx-5 justify-content-center login-c">
+            <div class="modal-content">
+                <form class="form-control" action="" method="post">
+                    <h5>Iniciar sesion</h5>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" name="Usuario" id="Usuario" type="text" data-sb-validations="required" />
+                        <label for="Usuario">Usuario</label>
+                        <div class="invalid-feedback" data-sb-feedback="Usuario:required">Ingrese su Usuario.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" name="contraseña" id="constraseña" type="text" data-sb-validations="required" />
+                        <label for="contraseña">Contraseña</label>
+                        <div class="invalid-feedback" data-sb-feedback="contraseña:required">Ingrese su Contraseña.</div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-dark">Iniciar sesión</button>
+                    <div><a href="InicioSecion.html">Registrate</a></div>
+                </form>
             </div>
         </div>
             <!-- Seccion de servicios-->
