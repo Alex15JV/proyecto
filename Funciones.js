@@ -65,7 +65,10 @@ function cerrarCarrito() {
     modal.style.display = "none";
 }
 
-
+function cerrarRegistro() {
+    var modal = document.getElementById("login");
+    modal.style.display = "none";
+}
 
 function abrirFichaTecnica(categoriaId, producto){
     var fichaTecnica = document.getElementById("ficha-tecnica-" + categoriaId + '-' + producto)

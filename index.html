@@ -64,16 +64,17 @@
             <div id="carritoModal" class="carrito">
                 <div class="modal-content">
                     <span class="Close" onclick="cerrarCarrito()">&times;</span>
-                    <h2>Productos</h2>
+                    <h2 class="TFP">Productos</h2>
                     <ul id="listaDeProductos"></ul>
                     <div class="total-carrito">Total: <span id="totalCarrito">0</span></div>
-                    <button class="Btn btn-primary" style="margin-top: 10px;" onclick="abrirChat()">Realizar pedido</button>
+                    <button class="Btn btn-outline-dark" style="margin-top: 10px;" onclick="abrirChat()">Realizar pedido</button>
                 </div>
             </div>
             <!--Registro-->
             <div id="login" class="row gx-5 justify-content-center login-c">
                 <div class="modal-content">
                     <form class="form-control" action="" method="post">
+                        <span class="Close" onclick="cerrarRegistro()">&times;</span>
                         <h5>Iniciar sesion</h5>
                         <div class="form-floating mb-3">
                             <input class="form-control" name="Usuario" id="Usuario" type="text" data-sb-validations="required" />
@@ -86,7 +87,7 @@
                             <div class="invalid-feedback" data-sb-feedback="contraseña:required">Ingrese su Contraseña.</div>
                         </div>
                         <button type="submit" class="btn btn-outline-dark">Iniciar sesión</button>
-                        <div><a href="InicioSecion.html">Registrate</a></div>
+                        <div><a href="InicioSesion.html">Registrate</a></div>
                     </form>
                 </div>
             </div>
