@@ -11121,3 +11121,10 @@ top: 100%;
     width: 80%; /* Ancho del contenedor en dispositivos pequeños */
   }
 }
+
+.TFC{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
