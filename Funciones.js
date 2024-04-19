@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+//evita redireccion en el formulario de contacto
 document.getElementById('formularioContacto').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -158,6 +159,7 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
     SL.send(DatosFormulario);
 });
 
+//evita redireccion en la seccion de login 
 document.getElementById('login').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita el comportamiento de envío por defecto
 
@@ -186,21 +188,26 @@ document.getElementById('login').addEventListener('submit', function(event) {
     });
 });
 
-document.getElementById('BTbuscar').addEventListener('click', function() {
-    var BTbuscar = document.getElementById('BTbuscar').value.toLowerCase();
-    var Contenido = document.querySelectorAll('.contenido');
-    var Resultados = document.getElementById('resultados');
-  
-    Resultados.innerHTML = '';
-  
-    Contenido.forEach(function(content) {
-      var titulo = content.querySelector('h2').textContent.toLowerCase();
-      var Descripcion = content.querySelector('p').textContent.toLowerCase();
-  
-      if (titulo.includes(BTbuscar) || Descripcion.includes(BTbuscar)) {
-        var item = document.createElement('div');
-        item.innerHTML = '<h2>' + titulo + '</h2><p>' + Descripcion + '</p>';
-        Resultados.appendChild(item);
-      }
+//evita redireccion en la seccion de registro
+d$(document).ready(function() {
+    $("#Inicio_Sesion").submit(function(event) {
+        event.preventDefault(); // Evita el envío tradicional del formulario
+        var formData = $(this).serialize(); // Serializa los datos del formulario
+
+        $.ajax({
+            type: "POST",
+            url: "https://astucious-latch.000webhostapp.com/registro.php",
+            data: formData,
+            success: function(response) {
+                // Aquí puedes manejar la respuesta del servidor
+                // Por ejemplo, puedes mostrar un mensaje al usuario
+                alert("Registro completado con éxito");
+                // También podrías redirigir al usuario a otra página:
+                // window.location.href = "pagina-de-exito.html";
+            },
+            error: function() {
+                alert("Hubo un error al procesar el formulario");
+            }
+        });
     });
-  });
+});
