@@ -158,24 +158,29 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
     SL.send(DatosFormulario);
 });
 
-document.getElementById('Inicio_Secion').addEventListener('submit', function(event) {
+document.getElementById('Inicio_Sesion').addEventListener('submit', function(event) {
     event.preventDefault();
 
     var DatosFormulario = new FormData(this);
-    var SL = new XMLHttpRequest();
-    SL.open('POST', 'https://astucious-latch.000webhostapp.com/registro.php', true);
-    SL.onreadystatechange = function(){
-        if (SL.readyState === XMLHttpRequest.DONE){
-            if (SL.status === 200){
-                alert(SL.responseText);
 
-                document.getElementById('Inicio_Secion').reset();
-            }else{
-                alert('error al enviar el formulario. Por favor intentelo de nuevo')
-            }
+    fetch('https://astucious-latch.000webhostapp.com/registro.php', {
+        method: 'POST',
+        body: DatosFormulario,
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.text();
         }
-    };
-    SL.send(DatosFormulario);
+        throw new Error('La solicitud ha fallado: ' + response.statusText);
+    })
+    .then(data => {
+        alert(data);
+        document.getElementById('Inicio_Sesion').reset();
+    })
+    .catch(error => {
+        console.error('Error durante la solicitud:', error);
+        alert('Error al enviar el formulario. Por favor, inténtelo de nuevo.');
+    });
 });
 
 document.getElementById('login').addEventListener('submit', function(event) {
