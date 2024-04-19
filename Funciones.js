@@ -158,7 +158,7 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
     SL.send(DatosFormulario);
 });
 
-document.getElementById('formLogin').addEventListener('submit', function(event) {
+document.getElementById('login').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita el comportamiento de envío por defecto
 
     const DatosFormulario = new FormData(this);
@@ -175,7 +175,7 @@ document.getElementById('formLogin').addEventListener('submit', function(event) 
     .then(data => {
         if (data.success) {
             document.getElementById('mensajeLogin').innerText = `Bienvenido, ${data.usuario}!`;
-            document.getElementById('formLogin').reset(); // Limpia el formulario
+            document.getElementById('login').reset(); // Limpia el formulario
         } else {
             document.getElementById('mensajeLogin').innerText = data.error; // Muestra el mensaje de error
         }
