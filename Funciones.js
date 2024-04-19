@@ -158,6 +158,34 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
     SL.send(DatosFormulario);
 });
 
+document.getElementById('formLogin').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita el comportamiento de envío por defecto
+
+    const DatosFormulario = new FormData(this);
+    fetch('https://astucious-latch.000webhostapp.com/login.php', {
+        method: 'POST',
+        body: DatosFormulario,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('La red o el servidor tienen problemas.');
+        }
+        return response.json(); // Asumiendo que el servidor devuelve JSON
+    })
+    .then(data => {
+        if (data.success) {
+            document.getElementById('mensajeLogin').innerText = `Bienvenido, ${data.usuario}!`;
+            document.getElementById('formLogin').reset(); // Limpia el formulario
+        } else {
+            document.getElementById('mensajeLogin').innerText = data.error; // Muestra el mensaje de error
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('mensajeLogin').innerText = 'Error al intentar iniciar sesión.';
+    });
+});
+
 document.getElementById('BTbuscar').addEventListener('click', function() {
     var BTbuscar = document.getElementById('BTbuscar').value.toLowerCase();
     var Contenido = document.querySelectorAll('.contenido');
