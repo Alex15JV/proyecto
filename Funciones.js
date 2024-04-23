@@ -158,3 +158,21 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
     };
     SL.send(DatosFormulario);
 });
+
+//Evitar redireccion del login
+document.getElementById('login').addEventListener('submit', function(event) {
+    event.preventDefault(); // Previene la redirección por defecto
+
+    var formData = new FormData(this); // Obtiene los datos del formulario
+
+    fetch('https://astucious-latch.000webhostapp.com/login.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text()) // o response.json() si el servidor responde con JSON
+    .then(data => {
+        console.log(data); // Maneja los datos recibidos del servidor
+        // Aquí puedes mostrar mensajes al usuario o actualizar partes de tu página
+    })
+    .catch(error => console.error('Error:', error));
+});
