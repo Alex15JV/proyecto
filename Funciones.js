@@ -159,20 +159,49 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
     SL.send(DatosFormulario);
 });
 
-//Evitar redireccion del login
-document.getElementById('login').addEventListener('submit', function(event) {
-    event.preventDefault(); // Previene la redirección por defecto
+document.getElementById('login').addEventListener('submit', function(e) {
+    e.preventDefault(); // Previene el envío tradicional del formulario
 
-    var formData = new FormData(this); // Obtiene los datos del formulario
-
+    var formData = new FormData(this);
     fetch('https://astucious-latch.000webhostapp.com/login.php', {
         method: 'POST',
         body: formData
     })
-    .then(response => response.text()) // o response.json() si el servidor responde con JSON
+    .then(response => response.json())
     .then(data => {
-        console.log(data); // Maneja los datos recibidos del servidor
-        // Aquí puedes mostrar mensajes al usuario o actualizar partes de tu página
+        if (data.success) {
+            // Almacenar el usuario en el almacenamiento local o cookies
+            localStorage.setItem('usuario', data.Usuario);
+            // Actualizar la UI
+            document.getElementById('nombreUsuario').textContent = 'Bienvenido, ' + data.Usuario;
+            // Redirigir a otra página o actualizar la página actual
+        } else {
+            alert(data.error); // Mostrar error
+        }
     })
     .catch(error => console.error('Error:', error));
+});
+
+//redirecciona a la pagina principal luego de completar registro
+document.getElementById('Inicio_Sesion').addEventListener('submit', function(event) {
+    event.preventDefault();  // Previene el envío normal del formulario.
+
+    var formData = new FormData(this);
+    
+    fetch('https://astucious-latch.000webhostapp.com/registro.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = 'https://ferreteriasoniaylibrado.com/index.html'; // Redirige aquí si el registro es exitoso.
+        } else {
+            alert(data.error); // Muestra un mensaje de error si algo va mal.
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("Error en la conexión con el servidor.");
+    });
 });
