@@ -182,26 +182,3 @@ document.getElementById('login').addEventListener('submit', function(e) {
     .catch(error => console.error('Error:', error));
 });
 
-//redirecciona a la pagina principal luego de completar registro
-document.getElementById('Inicio_Sesion').addEventListener('submit', function(event) {
-    event.preventDefault();  // Previene el envío normal del formulario.
-
-    var formData = new FormData(this);
-    
-    fetch('https://astucious-latch.000webhostapp.com/registro.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            window.location.href = 'https://ferreteriasoniaylibrado.com/index.html'; // Redirige aquí si el registro es exitoso.
-        } else {
-            alert(data.error); // Muestra un mensaje de error si algo va mal.
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert("Error en la conexión con el servidor.");
-    });
-});
