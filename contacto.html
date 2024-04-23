@@ -71,23 +71,23 @@
             <!--Registro-->
             <div id="login" class="row gx-5 justify-content-center login-c">
                 <div class="modal-content">
-                    <form class="form-control" action="login.php" method="post">
+                    <form class="form-control" action="https://astucious-latch.000webhostapp.com/login.php" method="post" target="s">
                         <span class="Close" onclick="cerrarRegistro()">&times;</span>
                         <h5 class="TFP">Iniciar sesion</h5>
                         <div class="form-floating mb-3">
-                            <input class="form-control" name="Usuario" id="Usuario" type="text" data-sb-validations="required" />
+                            <input class="form-control" name="Usuario" id="Usuario" type="text" required />
                             <label for="Usuario">Usuario</label>
-                            <div class="invalid-feedback" data-sb-feedback="Usuario:required">Ingrese su Usuario.</div>
+                            <div class="invalid-feedback">Ingrese su Usuario.</div>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" name="contraseña" id="constraseña" type="password" data-sb-validations="required" />
+                            <input class="form-control" name="contraseña" id="contraseña" type="password" required />
                             <label for="contraseña">Contraseña</label>
-                            <div class="invalid-feedback" data-sb-feedback="contraseña:required">Ingrese su Contraseña.</div>
+                            <div class="invalid-feedback">Ingrese su Contraseña.</div>
                         </div>
                         <div class="TFC"><button type="submit" class="TFP btn btn-outline-dark">Iniciar sesión</button></div>
                         <div><a class="" href="InicioSesion.html">Registrate</a></div>
                     </form>
-                    <div id="mensajeLogin"></div>
+                    <iframe name="n" style="display:none;"></iframe>
                 </div>
             </div>
             <!-- Contenedor-->
