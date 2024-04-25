@@ -10,13 +10,27 @@ function agregarProductosCarrito(categoriaId, productoID) {
         precio: precioProducto
     };
 
-    carrito.push(producto)
+    carrito.push(producto);
+    actualizarC();
 
     var badgeCarrito = document.querySelector('.badge');
     badgeCarrito.textContent = carrito.length;
 
     alert("Producto agregado al carrito con exito. " + nombreProductos)
 }
+function actualizarC() {
+    sessionStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+function GuardarP() {
+    if (sessionStorage.getItem('carrito')) {
+        carrito = JSON.parse(sessionStorage.getItem('carrito'));
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    GuardarP();
+});
 
 function abrirCarrito() {
     var modal = document.getElementById("carritoModal");
@@ -56,10 +70,10 @@ function abrirLogin() {
 
 function EliminarProducto(index) {
     carrito.splice(index, 1);
+    GuardarP();
     abrirCarrito();
 }
   
-
 function cerrarCarrito() {
     var modal = document.getElementById("carritoModal");
     modal.style.display = "none";
