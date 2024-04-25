@@ -70,8 +70,8 @@ function abrirLogin() {
 
 function EliminarProducto(index) {
     carrito.splice(index, 1);
+    actualizarC();
     GuardarP();
-    abrirCarrito();
 }
   
 function cerrarCarrito() {
