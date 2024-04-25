@@ -171,9 +171,9 @@ document.getElementById('login').addEventListener('submit', function(e) {
     .then(data => {
         if (data.success) {
             // Almacenar el usuario en el almacenamiento local o cookies
-            localStorage.setItem('usuario', data.Usuario);
+            localStorage.setItem('Usuario', data.Usuario);
             // Actualizar la UI
-            document.getElementById('nombreUsuario').textContent = 'Bienvenido, ' + data.Usuario;
+            document.getElementById('NombreUsuario').textContent = 'Bienvenido, ' + data.Usuario;
             // Redirigir a otra página o actualizar la página actual
         } else {
             alert(data.error); // Mostrar error
@@ -182,3 +182,30 @@ document.getElementById('login').addEventListener('submit', function(e) {
     .catch(error => console.error('Error:', error));
 });
 
+//Realizar pedidos
+function realizarPedido() {
+    var productos = document.getElementById('listaDeProductos').innerText;
+    var total = document.getElementById('totalCarrito').innerText;
+
+    
+    var formData = new FormData();
+    formData.append('productos', productos);
+    formData.append('total', total);
+
+    fetch('https://astucious-latch.000webhostapp.com/enviar_pedido.php', {
+        method: 'POST',
+        body: formData 
+    })
+    .then(response => response.text()) 
+    .then(data => {
+        console.log('Success:', data);
+        // Limpiar el carrito
+        document.getElementById('listaDeProductos').innerHTML = '';
+        document.getElementById('totalCarrito').innerText = '0';
+        // Mostrar mensaje al usuario
+        alert('El pedido fue realizado con exito, puede pasar por nuestras instalaciones a efectuar el pago y retirar su pedido. Gracias por su compra!');
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
