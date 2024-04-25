@@ -201,11 +201,13 @@ document.getElementById('login').addEventListener('submit', function(e) {
 function realizarPedido() {
     var productos = document.getElementById('listaDeProductos').innerText;
     var total = document.getElementById('totalCarrito').innerText;
+    var email = "alexperez2517@gmail.com";
 
     
     var formData = new FormData();
     formData.append('productos', productos);
     formData.append('total', total);
+    formData.append('email', email);
 
     fetch('https://astucious-latch.000webhostapp.com/enviar_pedido.php', {
         method: 'POST',
