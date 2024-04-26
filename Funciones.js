@@ -1,5 +1,6 @@
 var carrito = []
 
+//Agrega los porductos al carrito
 function agregarProductosCarrito(categoriaId, productoID) {
     var nombreProductos = document.getElementById('ficha-tecnica-' + categoriaId + '-' + productoID).querySelector('td:nth-child(2)').textContent;
     var CantidadProducto = parseInt(document.getElementById('Cantidadproducto-' + categoriaId + '-' + productoID).value);
@@ -21,17 +22,16 @@ function agregarProductosCarrito(categoriaId, productoID) {
 function actualizarC() {
     sessionStorage.setItem('carrito', JSON.stringify(carrito));
 }
-
 function GuardarP() {
     if (sessionStorage.getItem('carrito')) {
         carrito = JSON.parse(sessionStorage.getItem('carrito'));
     }
 }
-
 document.addEventListener('DOMContentLoaded', function() {
     GuardarP();
 });
 
+//Permite acceder al carrito
 function abrirCarrito() {
     var modal = document.getElementById("carritoModal");
     modal.style.display = "block";
@@ -62,7 +62,7 @@ function abrirCarrito() {
     var badgeCarrito = document.querySelector('.badge');
     badgeCarrito.textContent = carrito.length;
 }
-
+//permite acceder al login
 function abrirLogin() {
     var modal = document.getElementById("login");
     modal.style.display = "block";
@@ -71,20 +71,19 @@ function abrirLogin() {
 function EliminarProducto(index) {
     carrito.splice(index, 1);
     actualizarC();
-    
     abrirCarrito();
 }
-  
+//Cierra el carrito 
 function cerrarCarrito() {
     var modal = document.getElementById("carritoModal");
     modal.style.display = "none";
 }
-
+//Cierra el formulario de registro
 function cerrarRegistro() {
     var modal = document.getElementById("login");
     modal.style.display = "none";
 }
-
+//Abre las fichas tecnicas de los productos
 function abrirFichaTecnica(categoriaId, producto){
     var fichaTecnica = document.getElementById("ficha-tecnica-" + categoriaId + '-' + producto)
     if (fichaTecnica){
@@ -106,6 +105,7 @@ function cerrar(categoriaId, producto) {
         }
     }
 }
+//operaciones que se realizan en la ficha tecnica aumentar y decrementar la cantidad de productos
 function Sumar(categoriaId, producto) {
     var CantidadInput = document.getElementById('Cantidadproducto-' + categoriaId + '-' + producto);
     var Cantidad = parseInt(CantidadInput.value);
@@ -126,6 +126,7 @@ function Restar(categoriaId, producto) {
         ActualizarPrecio(-precioProducto, Cantidad, 'precioS' + producto.charAt(producto.length - 1));
     }
 }
+//Actualiza el precio luego de aumentar o decrementar
 function ActualizarPrecio(cambioPrecio, cantidad,IDPrecio){
     var precioTotalInput = document.getElementById(IDPrecio);
     if (precioTotalInput){
@@ -136,24 +137,7 @@ function ActualizarPrecio(cambioPrecio, cantidad,IDPrecio){
     
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    var togglerButtons = document.querySelectorAll('.navbar-toggler');
-
-    togglerButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            var target = this.getAttribute('data-bs-target');
-            var collapse = document.querySelector(target);
-
-            if (collapse.classList.contains('show')) {
-                collapse.classList.remove('show');
-            } else {
-                collapse.classList.add('show');
-            }
-        });
-    });
-});
-
-//evita redireccion en el formulario de contacto
+//Permite mandar el mensaje del formulario
 document.getElementById('formularioContacto').addEventListener('submit', function(event) {
     event.preventDefault();
 
