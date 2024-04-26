@@ -13,7 +13,7 @@
 </head>
 <body class="d-flex flex-column">
     <main class="flex-shrink-0 bg-light">
-        <!-- Seccion de navegacion-->
+        <!-- Seccion de navegacion -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-light">
             <img src="Imagenes/logo.webp" height="100px" width="100px" style="border-radius: 15px; margin-left: 90px;">
             <div class="container px-5">
@@ -35,11 +35,13 @@
         <!-- Menu secundario-->
         <nav class="navbar navbar-expand-lg navbar-dark colorM">
             <div class="container px-5">
+                <!--Zona para contactar con el servicio al cliente-->
                 <a class="navbar-brand" href="mailto:ferreteriasoniaylibrado7@gmail.com"><img src="Imagenes/Iconos/IconoMensaje.png" height="25" width="25" style="margin-bottom: 4px; margin-right: 5px;"><strong> Servicio al cliente</strong></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent2">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
+                            <!--Zona de busquedas-->
                             <input class="BuscarTXT" type="text" placeholder="Buscar" id="TXtbuscar" style="margin-right: 15px;">
                             <button class="btn btn-outline-dark" id="BTbuscar" style="margin-right: 30px; margin-bottom: 4px;"><strong>Buscar</strong></button>
                         </li>
@@ -47,6 +49,7 @@
                         <li class="nav-item"><a class="nav-link" href="productos.html" style="margin-right: 15px;">Productos</a></li>
                     </ul>
                     <div class="barra_"></div>
+                    <!--Boton para abrir el carrito-->
                     <form class="d-flex">
                         <button onclick="abrirCarrito()" class="btn btn-outline-dark" type="button">
                             <i class="bi-cart-fill me-1"></i>
@@ -55,25 +58,27 @@
                             <span class="badge text-white ms-1 rounded-pill">0</span>
                         </button>
                     </form>
+                    <!--Boton para el login-->
                     <button  id="Login-show" class="btn btn-outline-dark" onclick="abrirLogin()" style="margin-left: 15px;">
                         <img src="Imagenes/Iconos/acceso.png">
                     </button>
                 </div>
             </div>
         </nav>
-        <!-- carrito-->
+        <!--Carrito-->
         <div id="carritoModal" class="carrito">
             <div class="modal-content">
                 <span class="Close" onclick="cerrarCarrito()">&times;</span>
                 <h2 class="TFP">Productos</h2>
                 <ul id="listaDeProductos"></ul>
                 <div class="total-carrito">Total: <span id="totalCarrito">0</span></div>
-                <button class="btn btn-outline-dark" style="margin-top: 10px;" onclick="realizarPedido()">Realizar pedido</button>
+                <button class="btn btn-outline-dark" style="margin-top: 10px;" onclick="abrirChat()">Realizar pedido</button>
             </div>
         </div>
         <!--Registro-->
         <div id="login" class="row gx-5 justify-content-center login-c">
             <div class="modal-content">
+                <!--Formulario de registro-->
                 <form class="form-control" action="https://astucious-latch.000webhostapp.com/login.php" method="post">
                     <span class="Close" onclick="cerrarRegistro()">&times;</span>
                     <h5 class="TFP">Iniciar sesion</h5>
@@ -88,9 +93,9 @@
                         <div class="invalid-feedback">Ingrese su Contraseña.</div>
                     </div>
                     <div class="TFC"><button type="submit" class="TFP btn btn-outline-dark">Iniciar sesión</button></div>
-                    <div><a class="" href="InicioSesion.html">Registrate</a></div>
+                    <div><a class="" href="InicioSesion.html">Registrate</a></div> <!--Enlace para ir a registrar el usuario-->
                 </form>
-                <span id="nombreUsuario"></span>
+                <div id="NombreUsuario"></div>
             </div>
         </div>
         <!-- Encabezado-->
@@ -101,6 +106,7 @@
                     <li class="dropdown"><a href="#" class="dropdown-toggle"><strong>Categorias</strong></a>
                         <ul role="menu" class="dropdown-menu">
                             <li>
+                                <!--Lista de categorias disponibles-->
                                 <ul>
                                   <li><a href="#categoria1">Herramientas manuales</a></li>
                                   <li><a href="#categoria2">Productos para pintar</a></li>
@@ -131,23 +137,29 @@
             <!-- Primera categoria-->
             <div id="categoria1">
                 <h2 class="h5 color" style="text-align: center;">Herramientas manuales</h2>
+                <!--Producto 1-->
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
+                            <!--Contenedor de presentacion de los productos con imagen, nombre y precio-->
                             <div class="card-body p-5 color1">
                                 <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Destornillador plano.jpeg" class="imagen-producto"></div>
                                 <h2 class="h5 TFP">Destornillador plano</h2>
                                 <p> Precio: 145.00</p>
+                                <!--Boton para acceder a la ficha tecnica-->
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto1')"><strong>Detalles</strong></button>
                             </div>
                         </div>
                     </div>   
+                    <!--Ficha tecnica del producto-->
                     <div id="ficha-tecnica-categoria1-producto1" class="ficha-tecnica" data-precio="145">
                         <div class="row">
+                            <!--Imagen del producto para la ficha tecnica-->
                             <div class="col-md-5 CI">
                                 <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Destornillador plano.jpeg" class="IMEG mb-3">
                             </div>
                         </div>
+                        <!--Detalles de la ficha tecnica-->
                         <table>
                             <tr>
                                 <th>Nombre del producto:</th>
@@ -167,6 +179,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto1')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria1-producto1" value="1" readonly>
@@ -174,6 +187,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto1')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS1" value="145" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto1')">Agregar al carrito</button>
@@ -181,20 +195,25 @@
                     <!-- Producto 2-->
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
+                            <!--Contenedor de presentacion de los productos con imagen, nombre y precio-->
                             <div class="card-body p-5 color1">
                                 <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Martillo.jpeg" height="250px" width="250px"></div>
                                 <h2 class="h5 TFP">Martillo</h2>
                                 <p> Precio: 1,225.00</p>
+                                <!--Boton para acceder a la ficha tecnica-->
                                 <button class="btn btn-outline-dark" onclick="abrirFichaTecnica('categoria1', 'producto2')"><strong>Detalles</strong></button>
                             </div>
                         </div>
                     </div>   
+                    <!--Ficha tecnica del producto-->
                     <div id="ficha-tecnica-categoria1-producto2" class="ficha-tecnica" data-precio="1225">
                         <div class="row">
                             <div class="col-md-5 CI">
+                                <!--Imagen del producto para la ficha tecnica-->
                                 <img class="IMEG mb-3 rounded-3 text-white" src="Imagenes/ImagenesProductos/Martillo.jpeg" width="100px" height="100px">
                             </div>
                         </div>
+                        <!--Detalles de la ficha tecnica-->
                         <table>
                             <tr>
                                 <th>Nombre del producto:</th>
@@ -214,6 +233,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto2')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria1-producto2" value="1" readonly>
@@ -221,6 +241,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto2')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS2-categoria1-producto2" value="1225" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto2')">Agregar al carrito</button>
@@ -228,6 +249,7 @@
                     <!-- Producto 3-->
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
+                            <!--Contenedor de presentacion de los productos con imagen, nombre y precio-->
                             <div class="card-body p-5 color1">
                                 <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Pinza.jpeg" class="imagen-producto"></div>
                                 <h2 class="h5 TFP">Pinzas</h2>
@@ -236,6 +258,7 @@
                             </div>
                         </div>
                     </div>   
+                    <!--Ficha tecnica del producto-->
                     <div id="ficha-tecnica-categoria1-producto3" class="ficha-tecnica" data-precio="425">
                         <div class="row">
                             <div class="col-md-5 CI">
@@ -261,6 +284,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto3')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria1-producto3" value="1" readonly>
@@ -268,6 +292,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto3')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS3" value="425" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto3')">Agregar al carrito</button>
@@ -275,6 +300,7 @@
                     <!-- Producto 4-->
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
+                            <!--Contenedor de presentacion de los productos con imagen, nombre y precio-->
                             <div class="card-body p-5 color1">
                                 <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Alicate azul.jpeg" class="imagen-producto"></div>
                                 <h2 class="h5 TFP">Alicate</h2>
@@ -283,6 +309,7 @@
                             </div>
                         </div>
                     </div>   
+                    <!--Ficha tecnica del producto-->
                     <div id="ficha-tecnica-categoria1-producto4" class="ficha-tecnica" data-precio="400">
                         <div class="row">
                             <div class="col-md-5 CI">
@@ -308,6 +335,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto4')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria1-producto4" value="1" readonly>
@@ -315,6 +343,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto4')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS4" value="400" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto4')">Agregar al carrito</button>
@@ -322,6 +351,7 @@
                     <!-- Producto 5-->
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
+                            <!--Contenedor de presentacion de los productos con imagen, nombre y precio-->
                             <div class="card-body p-5 color1">
                                 <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Tijera hojalata.jpeg" class="imagen-producto"></div>
                                 <h2 class="h5 TFP">Tijeras para hojalata</h2>
@@ -330,6 +360,7 @@
                             </div>
                         </div>
                     </div>   
+                    <!--Ficha tecnica del producto-->
                     <div id="ficha-tecnica-categoria1-producto5" class="ficha-tecnica" data-precio="500">
                         <div class="row">
                             <div class="col-md-5 CI">
@@ -355,6 +386,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto5')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria1-producto5" value="1" readonly>
@@ -362,6 +394,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto5')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS5" value="500" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto5')">Agregar al carrito</button>
@@ -369,6 +402,7 @@
                     <!-- Producto 6-->
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
+                            <!--Contenedor de presentacion de los productos con imagen, nombre y precio-->
                             <div class="card-body p-5 color1">
                                 <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Llave 15mm.jpeg" class="imagen-producto"></div>
                                 <h2 class="h5 TFP">Llave de 15mm</h2>
@@ -377,6 +411,7 @@
                             </div>
                         </div>
                     </div>   
+                    <!--Ficha tecnica del producto-->
                     <div id="ficha-tecnica-categoria1-producto6" class="ficha-tecnica" data-precio="160">
                         <div class="row">
                             <div class="col-md-5 CI">
@@ -402,6 +437,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto6')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria1-producto6" value="1" readonly>
@@ -409,6 +445,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto6')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS6" value="160" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto6')">Agregar al carrito</button>
@@ -416,6 +453,7 @@
                     <!-- Producto 7-->
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
+                            <!--Contenedor de presentacion de los productos con imagen, nombre y precio-->
                             <div class="card-body p-5 color1">
                                 <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Llave 16mm.jpeg" class="imagen-producto"></div>
                                 <h2 class="h5 TFP">Llave de 16mm</h2>
@@ -424,6 +462,7 @@
                             </div>
                         </div>
                     </div>   
+                    <!--Ficha tecnica del producto-->
                     <div id="ficha-tecnica-categoria1-producto7" class="ficha-tecnica" data-precio="200">
                         <div class="row">
                             <div class="col-md-5 CI">
@@ -449,6 +488,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto7')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria1-producto7" value="1" readonly>
@@ -456,6 +496,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto7')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS7" value="200" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto7')">Agregar al carrito</button>
@@ -463,6 +504,7 @@
                     <!-- Producto 8-->
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
+                            <!--Contenedor de presentacion de los productos con imagen, nombre y precio-->
                             <div class="card-body p-5 color1">
                                 <div class="IMEG mb-3 rounded-3 text-white"><img src="Imagenes/ImagenesProductos/Llave 19mm.jpeg" width="170px" height="170px"></div>
                                 <h2 class="h5 TFP">Llave de 19mm</h2>
@@ -471,6 +513,7 @@
                             </div>
                         </div>
                     </div>   
+                    <!--Ficha tecnica del producto-->
                     <div id="ficha-tecnica-categoria1-producto8" class="ficha-tecnica" data-precio="290">
                         <div class="row">
                             <div class="col-md-5 CI">
@@ -496,6 +539,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria1', 'producto8')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria1-producto8" value="1" readonly>
@@ -503,18 +547,21 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria1', 'producto8')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS8" value="290" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria1', 'producto8')">Agregar al carrito</button>
                     </div>
                 </div>
             </div>    
+            <!--Boton para volver al inicio del sitio-->
             <a href="productos.html" class="btn_volver">Volver</a>
         </section>
          <!-- Seccion de la categoria 2-->
          <section>
             <div id="categoria2">
                 <h2 class="h5 color" style="text-align: center;">Productos para pintar</h2>
+                <!--Producto 1-->
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
@@ -551,6 +598,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto1')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria2-producto1" value="1" readonly>
@@ -558,6 +606,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto1')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS1" value="1250" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto1')">Agregar al carrito</button>
@@ -598,6 +647,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto2')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria2-producto2" value="1" readonly>
@@ -605,6 +655,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto2')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS2" value="550" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto2')">Agregar al carrito</button>
@@ -645,6 +696,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto3')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria2-producto3" value="1" readonly>
@@ -652,6 +704,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto3')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS3" value="100" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto3')">Agregar al carrito</button>
@@ -692,6 +745,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto4')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria2-producto4" value="1" readonly>
@@ -699,6 +753,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto4')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS4" value="50" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto4')">Agregar al carrito</button>
@@ -739,6 +794,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto5')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria2-producto5" value="1" readonly>
@@ -746,6 +802,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto5')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS5" value="115" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto5')">Agregar al carrito</button>
@@ -786,6 +843,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto6')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria2-producto6" value="1" readonly>
@@ -793,6 +851,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto6')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS6" value="120" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto6')">Agregar al carrito</button>
@@ -833,6 +892,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria2', 'producto7')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria2-producto7" value="1" readonly>
@@ -840,6 +900,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria2', 'producto7')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS7" value="200" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria2', 'producto7')">Agregar al carrito</button>
@@ -847,12 +908,14 @@
                     
                 </div>
             </div>    
+            <!--Boton para volver al inicio del sitio web-->
             <a href="productos.html" class="btn_volver">Volver</a>
         </section>
         <!-- Seccion de la categoria 3-->
         <section>
             <div id="categoria3">
                 <h2 class="h5 color" style="text-align: center;">Productos de Fontaneria</h2>
+                <!--Producto 1-->
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
@@ -889,6 +952,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto1')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria3-producto1" value="1" readonly>
@@ -896,6 +960,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto1')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS1" value="1250" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto1')">Agregar al carrito</button>
@@ -936,6 +1001,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto2')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria3-producto2" value="1" readonly>
@@ -943,6 +1009,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto2')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS2" value="550" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto2')">Agregar al carrito</button>
@@ -983,6 +1050,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto3')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria3-producto3" value="1" readonly>
@@ -990,6 +1058,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto3')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS6" value="1490" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto3')">Agregar al carrito</button>
@@ -1030,6 +1099,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto4')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria3-producto4" value="1" readonly>
@@ -1037,6 +1107,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto4')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS3" value="40" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto4')">Agregar al carrito</button>
@@ -1077,6 +1148,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto5')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria3-producto5" value="1" readonly>
@@ -1084,6 +1156,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto5')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS4" value="50" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto5')">Agregar al carrito</button>
@@ -1124,6 +1197,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto6')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria3-producto6" value="1" readonly>
@@ -1131,6 +1205,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto6')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS5" value="115" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto6')">Agregar al carrito</button>
@@ -1171,6 +1246,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto7')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria3-producto7" value="1" readonly>
@@ -1178,6 +1254,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto7')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS7" value="200" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto7')">Agregar al carrito</button>
@@ -1218,6 +1295,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto8')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria3-producto8" value="1" readonly>
@@ -1225,6 +1303,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto8')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS7" value="290" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto8')">Agregar al carrito</button>
@@ -1265,6 +1344,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria3', 'producto9')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria3-producto9" value="1" readonly>
@@ -1272,6 +1352,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria3', 'producto9')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS7" value="225" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria3', 'producto9')">Agregar al carrito</button>
@@ -1279,12 +1360,14 @@
                     
                 </div>
             </div>    
+            <!--Volver al inicio del sitio web-->
             <a href="productos.html" class="btn_volver">Volver</a>
         </section>
         <!-- Seccion de la categoria 4-->
         <section>
             <div id="categoria4">
                 <h2 class="h5 color" style="text-align: center;">Cerrajeria</h2>
+                <!--Producto 1-->
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-es-p col-xl-es-p">
                         <div class="card mb-5 mb-xl-5">
@@ -1321,6 +1404,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria4', 'producto1')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria4-producto1" value="1" readonly>
@@ -1328,6 +1412,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria4', 'producto1')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS1" value="1250" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria4', 'producto1')">Agregar al carrito</button>
@@ -1368,6 +1453,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria4', 'producto2')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria4-producto2" value="1" readonly>
@@ -1375,6 +1461,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria4', 'producto2')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS2" value="550" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria4', 'producto2')">Agregar al carrito</button>
@@ -1415,6 +1502,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria4', 'producto3')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria4-producto3" value="1" readonly>
@@ -1422,6 +1510,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria4', 'producto3')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS6" value="1490" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria4', 'producto3')">Agregar al carrito</button>
@@ -1462,6 +1551,7 @@
                             </tr>
                             <tr>
                                 <th>Cantidad:</th>
+                                <!--Funcion para incrementar y decrementar la cantidad de productos que se va a comprar-->
                                 <td>
                                     <button class="btn btn-outline-dark " onclick="Restar('categoria4', 'producto4')">-</button>
                                     <input type="text" id="Cantidadproducto-categoria4-producto4" value="1" readonly>
@@ -1469,6 +1559,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <!--Botones para cerrar y agregar productos en el carrito-->
                         <button class="btn btn-outline-dark" style="margin-right: 75px;" onclick="cerrar('categoria4', 'producto4')" >Cerrar</button>
                         <input style="margin-right: 65px;" type="text" id="precioS3" value="40" readonly> 
                         <button class="btn btn-outline-dark" onclick="agregarProductosCarrito('categoria4', 'producto4')">Agregar al carrito</button>
@@ -1494,6 +1585,7 @@
             </div>
         </div>
     </footer>
+    <!--Llamada al archivo JS para que funcionen correctamente las funciones-->
     <script src="Funciones.js"></script>
 
 </body>

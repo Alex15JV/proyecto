@@ -13,7 +13,7 @@
     </head>
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
-        <!-- Seccion de navegacion-->
+        <!-- Seccion de navegacion -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-light">
             <img src="Imagenes/logo.webp" height="100px" width="100px" style="border-radius: 15px; margin-left: 90px;">
             <div class="container px-5">
@@ -35,11 +35,13 @@
         <!-- Menu secundario-->
         <nav class="navbar navbar-expand-lg navbar-dark colorM">
             <div class="container px-5">
+                <!--Zona para contactar con el servicio al cliente-->
                 <a class="navbar-brand" href="mailto:ferreteriasoniaylibrado7@gmail.com"><img src="Imagenes/Iconos/IconoMensaje.png" height="25" width="25" style="margin-bottom: 4px; margin-right: 5px;"><strong> Servicio al cliente</strong></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent2">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
+                            <!--Zona de busquedas-->
                             <input class="BuscarTXT" type="text" placeholder="Buscar" id="TXtbuscar" style="margin-right: 15px;">
                             <button class="btn btn-outline-dark" id="BTbuscar" style="margin-right: 30px; margin-bottom: 4px;"><strong>Buscar</strong></button>
                         </li>
@@ -47,6 +49,7 @@
                         <li class="nav-item"><a class="nav-link" href="productos.html" style="margin-right: 15px;">Productos</a></li>
                     </ul>
                     <div class="barra_"></div>
+                    <!--Boton para abrir el carrito-->
                     <form class="d-flex">
                         <button onclick="abrirCarrito()" class="btn btn-outline-dark" type="button">
                             <i class="bi-cart-fill me-1"></i>
@@ -55,6 +58,7 @@
                             <span class="badge text-white ms-1 rounded-pill">0</span>
                         </button>
                     </form>
+                    <!--Boton para el login-->
                     <button  id="Login-show" class="btn btn-outline-dark" onclick="abrirLogin()" style="margin-left: 15px;">
                         <img src="Imagenes/Iconos/acceso.png">
                     </button>
@@ -74,6 +78,7 @@
         <!--Registro-->
         <div id="login" class="row gx-5 justify-content-center login-c">
             <div class="modal-content">
+                <!--Formulario de registro-->
                 <form class="form-control" action="https://astucious-latch.000webhostapp.com/login.php" method="post">
                     <span class="Close" onclick="cerrarRegistro()">&times;</span>
                     <h5 class="TFP">Iniciar sesion</h5>
@@ -88,7 +93,7 @@
                         <div class="invalid-feedback">Ingrese su Contraseña.</div>
                     </div>
                     <div class="TFC"><button type="submit" class="TFP btn btn-outline-dark">Iniciar sesión</button></div>
-                    <div><a class="" href="InicioSesion.html">Registrate</a></div>
+                    <div><a class="" href="InicioSesion.html">Registrate</a></div> <!--Enlace para ir a registrar usuario-->
                 </form>
                 <span id="nombreUsuario"></span>
             </div>
@@ -185,6 +190,7 @@
                 </div>
             </div>
         </footer>
+        <!--Llamada al archivo JS para que funcionen correctamente las funciones-->
         <script src="Funciones.js"></script>
     </body>
 </html>
